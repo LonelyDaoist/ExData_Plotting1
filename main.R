@@ -15,7 +15,7 @@ data <- read.table(file = "data.txt",sep = ";",header = F,col.names = col.names)
 data$Datetime <- paste(data$Date,data$Time)
 data$Datetime <- strptime(data$Datetime, format = "%d/%m/%Y %H:%M:%S")
 
-# Drop the date column because it's provided by the datetime column
+# Drop the date and Time columns because they are provided by the datetime column
 data <- data[,c(-1,-2)]
 
 # Constructing and saving the plots the plots
